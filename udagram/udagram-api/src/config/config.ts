@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 
-// ENV variables 
+// ENV variables
 // - AWS_ACCESS_KEY_ID
 // - AWS_SECRET_ACCESS_KEY
 // Are Also needed
@@ -11,6 +11,7 @@ export const config = {
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
   port: Number(process.env.PORT),
+  portdb: Number(process.env.PORT_DB),
   host: process.env.POSTGRES_HOST,
   dialect: "postgres",
   aws_region: process.env.AWS_REGION,
