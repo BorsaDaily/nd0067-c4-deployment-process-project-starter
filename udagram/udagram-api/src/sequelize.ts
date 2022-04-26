@@ -11,3 +11,5 @@ export const sequelize = new Sequelize({
   dialect: "postgres",
   storage: ":memory:",
 });
+
+console.log("trial checkout");
