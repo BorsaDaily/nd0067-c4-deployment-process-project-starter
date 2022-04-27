@@ -38,11 +38,11 @@ jobs:
       - node/install
       - checkout
       - run:
-          name: Front-End Install
+          name: Front-End build
           command: |
             cd ./udagram/udagram-frontend && npm run build
       - run:
-          name: Back-End Install
+          name: Back-End build
           command: |
             cd ./udagram/udagram-api && npm run build             
 
