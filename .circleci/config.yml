@@ -31,6 +31,11 @@ jobs:
           name: Back-End Install
           command: |
             cd ./udagram/udagram-api && npm install
+      - run:
+          name: install angular cli globally
+          command: |
+           npm install -g @angular/cli
+            
   build:
     docker:
       - image: cimg/base:stable
@@ -38,7 +43,7 @@ jobs:
       - run:
           name: Front-End build
           command: |
-            cd ./udagram/udagram-frontend && npm run build
+             cd ./udagram/udagram-frontend && npm run build
             
       - run:
           name: Back-End build
