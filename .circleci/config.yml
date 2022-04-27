@@ -26,11 +26,15 @@ jobs:
       - run:
           name: Front-End Install
           command: |
-            cd ./udagram/udagram-frontend && npm install
+            cd ./udagram/udagram-frontend && npm install && npm run build
       - run:
           name: Back-End Install
           command: |
-            cd ./udagram/udagram-api && npm install  
+            cd ./udagram/udagram-api && npm install && npm run build 
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
       - run:
           name: Front-End build
           command: |
