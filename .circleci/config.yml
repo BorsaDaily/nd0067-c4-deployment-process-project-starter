@@ -20,8 +20,7 @@ jobs:
           aws-secret-access-key: SECRET_ACCESS_KEY_ENV_VAR_NAME 
           role-arn: arn:aws:iam::457416323948:user/udagram22cli 
   build:
-    docker:
-      - image: cimg/base:stable
+    executor: aws-cli/default
     steps:
       - node/install
       - checkout
@@ -51,6 +50,7 @@ jobs:
             cd ./udagram/udagram-frontend && npm run lint
       - run:
           name: Front-End deploy
+       
           command: |
             cd ./udagram/udagram-frontend && npm run deploy           
 
