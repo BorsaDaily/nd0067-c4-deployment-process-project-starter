@@ -45,9 +45,17 @@ jobs:
           command: |
             cd ./udagram/udagram-api && npm run build 
       - run:
-          name: Front-End test
+          name: Front-End test-lint
           command: |
-            cd ./udagram/udagram-frontend && npm run test  && npm run lint  && npm run e2e                               
+            cd ./udagram/udagram-frontend && npm run lint
+      - run:
+          name: Front-End test-e2e
+          command: |
+            cd ./udagram/udagram-frontend && npm run e2e 
+      - run:
+          name: Front-End test-test
+          command: |
+            cd ./udagram/udagram-frontend && npm run test                                                            
 # workflows:
 #   udagram22app:
 #     jobs:
