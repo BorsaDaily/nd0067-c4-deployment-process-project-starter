@@ -52,5 +52,5 @@ jobs:
       - run:
           name: Front-End deploy
           command: |
-            cd ./udagram/udagram-frontend && npm run deploy           
+            aws s3 cp --recursive --acl public-read ./www s3://udagram22bucket1/         
 
