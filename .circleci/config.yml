@@ -8,7 +8,7 @@ orbs:
 jobs:
   example-job:
     docker:
-      # replace with your preferred image
+      # replace with your preferred image 
       - image: cimg/base:stable
     steps:
       - aws-cli/setup:
