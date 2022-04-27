@@ -47,7 +47,7 @@ jobs:
             cd ./udagram/udagram-api && npm run build             
 
 workflows:
-  example-workflow:
+  udagram22app:
     jobs:
       - aws-cli-installation
       - npm-installation
