@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@2.0.3
+  node: circleci/node@5.0.2
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -30,9 +31,24 @@ jobs:
           name: Back-End Install
           command: |
             cd ./udagram/udagram-api && npm install   
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - node/install
+      - checkout
+      - run:
+          name: Front-End Install
+          command: |
+            cd ./udagram/udagram-frontend && npm run build
+      - run:
+          name: Back-End Install
+          command: |
+            cd ./udagram/udagram-api && npm run build             
 
 workflows:
   example-workflow:
     jobs:
       - aws-cli-installation
       - npm-installation
+      - build
