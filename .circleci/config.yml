@@ -49,15 +49,7 @@ jobs:
           command: |
             cd ./udagram/udagram-frontend && npm run lint
       - run:
-          name: Front-End test-e2e
+          name: Front-End deploy
           command: |
-            cd ./udagram/udagram-frontend && npm run e2e 
-      - run:
-          name: Front-End test-test
-          command: |
-            cd ./udagram/udagram-frontend && npm run test                                                            
-# workflows:
-#   udagram22app:
-#     jobs:
-#       - aws-cli-installation
-#       - npm-installation-build
+            cd ./udagram/udagram-frontend && npm run deploy           
+
