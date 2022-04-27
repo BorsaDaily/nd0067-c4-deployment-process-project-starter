@@ -25,6 +25,7 @@ jobs:
     steps:
       - node/install
       - checkout
+      - aws-cli/setup
       - run:
           name: install angular cli globally
           command: |
@@ -52,5 +53,5 @@ jobs:
       - run:
           name: Front-End deploy
           command: |
-            aws s3 cp --recursive --acl public-read ./www s3://udagram22bucket1/         
+            cd ./udagram/udagram-frontend && npm run deploy           
 
