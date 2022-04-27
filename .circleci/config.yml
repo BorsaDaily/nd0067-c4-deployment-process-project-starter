@@ -27,10 +27,12 @@ jobs:
           name: Front-End Install
           command: |
             cd ./udagram/udagram-frontend && npm install
+            npm install angular-cli@latest -g
       - run:
           name: Back-End Install
           command: |
             cd ./udagram/udagram-api && npm install   
+            npm install angular-cli@latest -g  
   build:
     docker:
       - image: cimg/base:stable
@@ -41,12 +43,12 @@ jobs:
           name: Front-End build
           command: |
             cd ./udagram/udagram-frontend && npm run build
-            npm install angular-cli@latest -g
+            
       - run:
           name: Back-End build
           command: |
             cd ./udagram/udagram-api && npm run build 
-            npm install angular-cli@latest -g            
+                      
 workflows:
   udagram22app:
     jobs:
