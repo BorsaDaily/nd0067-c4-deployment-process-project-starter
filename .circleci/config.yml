@@ -16,7 +16,7 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - eb/setup
+      - aws-elastic-beanstalk/setup
       - aws-cli/setup:
           aws-access-key-id: ACCESS_KEY_ID_ENV_VAR_NAME 
           aws-secret-access-key: SECRET_ACCESS_KEY_ENV_VAR_NAME 
