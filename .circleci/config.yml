@@ -9,17 +9,6 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  # aws-cli-installation:
-  #   docker:
-  #     # replace with your preferred image
-  #     - image: cimg/base:stable
-  #   steps:
-  #     - aws-cli/setup:
-  #         aws-access-key-id: ACCESS_KEY_ID_ENV_VAR_NAME 
-  #         aws-secret-access-key: SECRET_ACCESS_KEY_ENV_VAR_NAME 
-  #         aws-region: AWS_REGION 
-          
-          # role-arn: arn:aws:iam::457416323948:user/udagram22cli 
   build:
     docker:
       - image: cimg/base:stable
@@ -27,6 +16,7 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
+      - eb/setup
       - aws-cli/setup:
           aws-access-key-id: ACCESS_KEY_ID_ENV_VAR_NAME 
           aws-secret-access-key: SECRET_ACCESS_KEY_ENV_VAR_NAME 
@@ -54,9 +44,21 @@ jobs:
       - run:
           name: Front-End test-lint
           command: |
-            cd ./udagram/udagram-frontend && npm run lint
+            cd ./udagram/udagram-frontend && npm run test
       - run:
           name: Front-End deploy
           command: |
-            cd ./udagram/udagram-frontend && npm run deploy           
+            cd ./udagram/udagram-frontend && npm run deploy      
+                  - eb/setup:
+      - run:
+          name: EB intitialization
+          command: |
+            eb use EB_ENV_NAME
+            eb status   
+      - run:
+          name: Back-End deploy
+          command: |
+            cd ./udagram/udagram-api && npm run deploy 
+            
+              
 
