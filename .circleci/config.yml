@@ -59,6 +59,7 @@ jobs:
       - run:
           name: Back-End deploy
           command: |
+            eb use Udagram22app-env
             cd ./udagram/udagram-api && npm run deploy 
             
               
