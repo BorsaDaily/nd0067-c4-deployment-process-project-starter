@@ -53,9 +53,6 @@ jobs:
       - run:
           name: EB intitialization
           command: |
-            apt-get -y -qq update
-            apt-get install python3-pip python3-dev build-essential
-            pip3 install awsebcli
             eb init 
             eb use EB_ENV_NAME
             eb status   
