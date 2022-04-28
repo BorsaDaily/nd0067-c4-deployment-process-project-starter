@@ -50,7 +50,6 @@ jobs:
           name: Front-End deploy
           command: |
             cd ./udagram/udagram-frontend && npm run deploy      
-                  - eb/setup:
       - run:
           name: EB intitialization
           command: |
