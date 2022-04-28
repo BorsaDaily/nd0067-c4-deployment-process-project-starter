@@ -52,8 +52,7 @@ jobs:
             cd ./udagram/udagram-frontend && npm run deploy      
       - run:
           name: EB intitialization
-          command: |
-            eb init 
+          command: | 
             eb use EB_ENV_NAME
             eb status   
       - run:
