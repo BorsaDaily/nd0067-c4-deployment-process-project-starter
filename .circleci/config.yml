@@ -59,10 +59,6 @@ jobs:
       - run:
           name: Back-End deploy
           command: |
-            - aws configure
-                   AWS Access Key ID = AWS_ACCESS_KEY_ID 
-                   AWS Secret Access Key = AWS_SECRET_ACCESS_KEY 
-                   Default region name = AWS_REGION 
             eb init udagram22app --platform Node.js --region us-east-1
             eb use Udagram22app-env-1
             cd ./udagram/udagram-api && npm run deploy 
