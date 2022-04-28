@@ -1,1 +1,1 @@
-eb deploy --master
+eb deploy 
