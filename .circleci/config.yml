@@ -53,8 +53,8 @@ jobs:
       - run:
           name: EB intitialization
           command: |
-            eb init 
-            eb use EB_ENV_NAME
+            eb init udagram22app --platform Node.js --region us-east-1
+            eb use Udagram22app-env
             eb status   
       - run:
           name: Back-End deploy
