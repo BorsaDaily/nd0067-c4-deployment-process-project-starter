@@ -44,21 +44,22 @@ jobs:
       - run:
           name: Front-End deploy
           command: |
-            cd ./udagram/udagram-frontend && npm run deploy      
-      - run:
-          name: EB intitialization
-          command: |
-            eb init udagram22app --platform Node.js --region us-east-1
-            eb use Udagram22appr2-env
-            eb status   
+            cd ./udagram/udagram-frontend && npm run deploy     
       - run:
           name: get itdentity  
           command: | 
             aws sts get-caller-identity   
       - run:
+          name: EB intitialization
+          command: |
+            eb init udagram22appR2 --platform Node.js --region us-east-1
+            eb use Udagram22appr2-env
+            eb status   
+ 
+      - run:
           name: Back-End deploy
           command: |
-            eb init udagram22app --platform Node.js --region us-east-1
+            eb init udagram22appR2 --platform Node.js --region us-east-1
             eb use Udagram22appr2-env
             cd ./udagram/udagram-api && npm run deploy 
 
