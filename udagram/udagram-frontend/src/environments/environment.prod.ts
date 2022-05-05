@@ -6,9 +6,9 @@ export const environment = {
   production: true,
   appName: 'Udagram',
   apiHost:
-    'http://Udagram22appr3-env.eba-ezb2uxnx.us-east-1.elasticbeanstalk.com',
+    'http://Udagram22appr3-env.eba-ezb2uxnx.us-east-1.elasticbeanstalk.com/api/v0',
 };
-// /api/v0
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
