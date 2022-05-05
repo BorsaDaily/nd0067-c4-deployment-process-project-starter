@@ -25,7 +25,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['CircleCI_ChromeHeadless'],
+    browsers: ['CircleCI_ChromeHeadless','chrome'],
     singleRun: false
   });
 };
