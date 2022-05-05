@@ -9,3 +9,5 @@ The MyStore full stack application is hosted on the Amazon Web Services Cloud wi
 3.  AWS Simple Storage Service (S3) - scalable storage hosting the UI front-end
 
 ## AWS RDS
+
+![alt text](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/RDS-Status.PNG"AWS S3")
