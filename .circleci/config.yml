@@ -59,9 +59,10 @@ jobs:
       - run:
           name: Back-End deploy
           command: |
+            cd ./udagram/udagram-api
             eb init udagram22appR3 --platform Node.js --region us-east-1
             eb use Udagram22appr3-env
-            cd ./udagram/udagram-api && npm run deploy 
+            npm run deploy 
 
               
 
