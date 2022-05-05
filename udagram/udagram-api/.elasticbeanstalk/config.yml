@@ -1,0 +1,22 @@
+branch-defaults:
+  default:
+    environment: Udagram22appr3-env
+environment-defaults:
+  Udagram22appr3-env:
+    branch: null
+    repository: null
+global:
+  application_name: udagram22appR3
+  artifact: www/Archive.zip
+  default_ec2_keyname: null
+  default_platform: Node.js 16 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  deploy: null
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: Node.js
+  platform_version: null
+  profile: null
+  sc: null
+  workspace_type: Application
+ 
