@@ -47,10 +47,6 @@ jobs:
             chromedriver --version
             cd ./udagram/udagram-frontend && npm run test
       - run:
-          name: Front-End test
-          command: |
-            cd ./udagram/udagram-api && npm run test
-      - run:
           name: Front-End deploy
           command: |
             cd ./udagram/udagram-frontend && npm run deploy     
