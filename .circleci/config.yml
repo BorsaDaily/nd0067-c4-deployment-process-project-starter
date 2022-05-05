@@ -62,6 +62,6 @@ jobs:
             cd ./udagram/udagram-api
             eb init udagram22appR3 --platform Node.js --region us-east-1
             eb use Udagram22appr3-env
-            npm run deploy 
+            npm run deploy
               
 
