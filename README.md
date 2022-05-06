@@ -16,4 +16,4 @@
 
 4. [simple diagram giving a high-level overview of the infrastructure](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/Arch-AWS.PNG)
 
-5.[diagram showing the overview of the pipeline](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/Arch-CircleCi.PNG)
+5. [diagram showing the overview of the pipeline](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/Arch-CircleCi.PNG)
