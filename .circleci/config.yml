@@ -11,7 +11,7 @@ workflows:
       - build:
           filters:
             branches:
-              only: main
+              only: master
 jobs:
   build:
     docker:
@@ -61,12 +61,6 @@ jobs:
           name: get itdentity
           command: |
             aws sts get-caller-identity
-      - run:
-          name: EB intitialization
-          command: |
-            eb init udagram22appR3 --platform Node.js --region us-east-1
-            eb use Udagram22appr3-env
-            eb status
       - run:
           name: Back-End deploy
           command: |
