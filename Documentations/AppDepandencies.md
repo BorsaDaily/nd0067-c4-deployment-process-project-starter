@@ -1,10 +1,16 @@
 # App dependencies
 
 ## Root Package.json
-only include working Engine for CircleCi
+
 ```
 {
-    "scripts": {},
+    "scripts": {"frontend:install": "cd ./udagram/udagram-frontend && npm install",
+      "frontend:build": "cd ./udagram/udagram-frontend && npm run build",
+      "frontend:test": "cd ./udagram/udagram-frontend && npm run test",
+      "frontend:deploy": "cd ./udagram/udagram-frontend && npm run deploy",
+      "backend:install": "cd ./udagram/udagram-api && npm install",
+      "backend:build": "cd ./udagram/udagram-api && npm run build",
+      "backend:deploy": "cd ./udagram/udagram-api && npm run deploy"},
     "devDependencies": {}, "engines" : { 
         "npm" : ">=7.0.0",
         "node" : ">=16.0.0"
