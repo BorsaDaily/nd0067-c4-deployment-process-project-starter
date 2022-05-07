@@ -100,4 +100,4 @@ jobs:
 4. Pipeline Work Flow Status
 
 ![alt text](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/CircleCi%20-CI-CD%20status%20-1.PNG "status1")
-![alt text](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/CircleCi%20-CI-CD%20status%20-2.PNG "status2")
+![alt text](https://github.com/BorsaDaily/nd0067-c4-deployment-process-project-starter/blob/master/screenshots/CircleCi%20-CI-CD%20status%20-2.PNG "status2") 
