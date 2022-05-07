@@ -1,11 +1,13 @@
 version: 2.1
 orbs:
+# installing Obrs to support work and testing Env.
   aws-cli: circleci/aws-cli@2.0.3
   aws-s3: circleci/aws-s3@3.0.0
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
   node: circleci/node@5.0.2
   browser-tools: circleci/browser-tools@1.3.0
 workflows:
+#filter to Ensure that deployment for master Branch only
   buildanddeployment:
     jobs:
       - build:
@@ -23,44 +25,54 @@ jobs:
       - aws-elastic-beanstalk/setup
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
+      # aws cli setup and passing admin IAM
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_REGION
+      # installing Anglular CLI    
       - run:
           name: install angular cli globally
           command: |
             npm install -g @angular/cli
+      # installing Dependencies for front-End      
       - run:
           name: Front-End Install
           command: |
             cd ./udagram/udagram-frontend && npm install
+      # installing Dependencies for Back-End 
       - run:
           name: Back-End Install
           command: |
             cd ./udagram/udagram-api && npm install
+      # Buililding script for Front-End-Build
       - run:
           name: Front-End build
           command: |
             cd ./udagram/udagram-frontend && npm run build
+      # Buililding script for Back-End-Build
       - run:
           name: Back-End build
           command: |
             cd ./udagram/udagram-api && npm run build
+      # testing Front-End with Karma and chrome
       - run:
           name: Front-End test
           command: |
             google-chrome --version
             chromedriver --version
             cd ./udagram/udagram-frontend && npm run test
+      # front-End Deployment script thorough CLI to S3 Bucket      
       - run:
           name: Front-End deploy
           command: |
             cd ./udagram/udagram-frontend && npm run deploy
+      # Get identity of the user to ensure that IAM is working porperly    
       - run:
           name: get itdentity
           command: |
             aws sts get-caller-identity
+      # Back-End Deployment script thorough CLI to EB and passing Env Variables from Circle CI   
       - run:
           name: Back-End deploy
           command: |

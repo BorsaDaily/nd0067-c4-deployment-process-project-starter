@@ -1,5 +1,16 @@
 # App dependencies
 
+## Root Package.json
+only include working Engine for CircleCi
+```
+{
+    "scripts": {},
+    "devDependencies": {}, "engines" : { 
+        "npm" : ">=7.0.0",
+        "node" : ">=16.0.0"
+      }
+}
+```
 ## Back-End dependencies
 
 ```{
