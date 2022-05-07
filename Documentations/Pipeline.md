@@ -46,34 +46,34 @@ jobs:
       - run:
           name: Front-End Install
           command: |
-            cd ./udagram/udagram-frontend && npm install
+            npm run frontend:install
       # installing Dependencies for Back-End 
       - run:
           name: Back-End Install
           command: |
-            cd ./udagram/udagram-api && npm install
+            npm run backend:install
       # Buililding script for Front-End-Build
       - run:
           name: Front-End build
           command: |
-            cd ./udagram/udagram-frontend && npm run build
+            npm run frontend:build
       # Buililding script for Back-End-Build
       - run:
           name: Back-End build
           command: |
-            cd ./udagram/udagram-api && npm run build
+            npm run backend:build
       # testing Front-End with Karma and chrome
       - run:
           name: Front-End test
           command: |
             google-chrome --version
             chromedriver --version
-            cd ./udagram/udagram-frontend && npm run test
+            npm run frontend:test
       # front-End Deployment script thorough CLI to S3 Bucket      
       - run:
           name: Front-End deploy
           command: |
-            cd ./udagram/udagram-frontend && npm run deploy
+            npm run frontend:deploy
       # Get identity of the user to ensure that IAM is working porperly    
       - run:
           name: get itdentity
@@ -83,12 +83,11 @@ jobs:
       - run:
           name: Back-End deploy
           command: |
-            cd ./udagram/udagram-api
             eb init udagram22appR3 --platform Node.js --region us-east-1
+            eb setenv AWS_BUCKET=$AWS_BUCKET AWS_PROFILE=$AWS_PROFILE AWS_REGION=$AWS_DEFAULT_REGION JWT_SECRET=$JWT_SECRET PORT=$PORT PORT_DB=$PORT_DB	 POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME URL=$URL
             eb use Udagram22appr3-env
-            npm run deploy
-
-              
+            npm run backend:deploy
+      
 ```
 2. connected Github repo
 
